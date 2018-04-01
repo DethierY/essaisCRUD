@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let v of listVehicule" [routerLink]="['/detail',v.id_vehicule]">
+      <p>
+        {{v.type}} {{v.marque}} {{v.modele}} {{v.couleur}} {{v.immatriculation}}
+      </p>
+  </mat-list-item>
+</mat-list>

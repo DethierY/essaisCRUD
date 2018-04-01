@@ -1,0 +1,20 @@
+<mat-card *ngIf="vehicule">
+<p>Type: {{vehicule.type}}: </p>
+<p>Marque: {{vehicule.marque}}</p>
+<p>Modele: {{vehicule.modele}}</p>
+<p>couleur: {{vehicule.couleur}}</p>
+<p>immatriculation: {{vehicule.immatriculation}}</p>
+
+<div>
+    <div>
+      <button mat-icon-button
+        (click)="openDeleteDialog()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-icon-button href="" routerLink="../../edit/{{vehicule.id_vehicule}}">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>
+

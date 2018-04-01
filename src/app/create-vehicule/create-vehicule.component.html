@@ -1,0 +1,38 @@
+<mat-card *ngIf="vehicule">
+  <h1>{{ editing? 'Edition' : 'Création'}}</h1>
+  <form #postForm="ngForm" (ngSubmit) = "onSubmit()" class = "example-form">
+    <mat-form-field>
+      <mat-select name = "type" placeholder = "Type de véhicule"
+                  [(ngModel)]="vehicule.type">
+        <mat-option *ngFor="let type of listTypeVehicule" [value]="type.value">
+          {{ type.viewValue }}
+        </mat-option>
+      </mat-select>
+      <!-- <input matInput [(ngModel)]="vehicule.type"
+        placeholder = "Type du véhicule"
+        name = "type" type = "text" required> -->
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="vehicule.marque"
+        placeholder = "Marque du véhicule"
+        name = "marque" type = "text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="vehicule.modele"
+        placeholder = "Modèle du véhicule"
+        name = "modele" type = "text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="vehicule.immatriculation"
+        placeholder = "Immatriculation du véhicule"
+        name = "immatriculation" type = "text">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="vehicule.couleur"
+        placeholder = "Couleur du véhicule"
+        name = "couleur" type = "text">
+    </mat-form-field>
+    <button mat-raised-button type = "submit" mat-button>{{ editing? 'Mettre à jour' : 'Créer'}}</button>
+    <p>{{vehicule | json}}</p>
+  </form>
+</mat-card>

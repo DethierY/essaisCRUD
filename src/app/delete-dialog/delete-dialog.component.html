@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Supression</h1>
+<div mat-dialog-content>
+  <p>Confirmer la supression du vehicule</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Supprimer</button>
+</div>
